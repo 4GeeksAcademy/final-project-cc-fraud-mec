@@ -8,5 +8,3 @@ imblearn
 statsmodels
 pysqlite3
 kagglehub
-pickle
-os
