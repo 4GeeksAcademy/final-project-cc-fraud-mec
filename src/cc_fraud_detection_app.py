@@ -8,7 +8,7 @@ import os
 # Get project directory
 main_dir  = "/workspaces/"
 proj_dir  = "final-project-cc-fraud-mec"
-model_dir = "models"
+model_dir = "src/models"
 templ_dir = "src/templates"
 json_dir  = "data/json files"
 
