@@ -10,7 +10,7 @@ main_dir  = "/workspaces/"
 proj_dir  = "final-project-cc-fraud-mec"
 model_dir = "src/models"
 templ_dir = "src/templates"
-json_dir  = "data/json files"
+json_dir  = "src/json_files"
 
 # Define app
 app = Flask(__name__) # app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), templ_dir))
