@@ -9,5 +9,4 @@ statsmodels
 pysqlite3
 kagglehub
 pickle
-json
 os
