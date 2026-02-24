@@ -6,8 +6,8 @@ import json
 import os
 
 # Get project directory
-main_dir  = "/workspaces/final-project-csmb20"
-proj_dir  = "final-project-csmb20"
+main_dir  = "/workspaces"
+proj_dir  = "final-project-cc-fraud-mec"
 model_dir = "models"
 templ_dir = "src/templates"
 json_dir  = "data/json files"
@@ -16,7 +16,7 @@ json_dir  = "data/json files"
 app = Flask(__name__) # app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), templ_dir))
 
 # Load models
-fraud_model_path = os.path.join(main_dir,proj_dir,model_dir,"fraud_cc_forest_default_42.sav")
+fraud_model_path = os.path.join(main_dir,proj_dir,model_dir,"fraud_cc_xgb_default_42.sav")
 type_model_path  = os.path.join(main_dir,proj_dir,model_dir,"fraud_type_xgb_default_42.sav")
 
 with open(fraud_model_path, "rb") as f:
@@ -128,6 +128,3 @@ def detection():
         pred_class_type   = None
     
     return render_template("webapp_fraud_cc.html", pred_fraud = pred_class_fraud, pred_type = pred_class_type, city_state_data = city_state_mapping_dict, merchant_data = merchant_mapping_dict)
-
-    if __name__ == "__main__":
-        app.run(debug=True, port=8000)
