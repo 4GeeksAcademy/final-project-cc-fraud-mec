@@ -6,18 +6,18 @@ import json
 import os
 
 # Get project directory
-main_dir  = "/workspaces/"
-proj_dir  = "final-project-cc-fraud-mec"
-model_dir = "src/models"
-templ_dir = "src/templates"
-json_dir  = "src/json_files"
+#main_dir  = "/workspaces/"
+#proj_dir  = "final-project-cc-fraud-mec"
+#model_dir = "src/models"
+#templ_dir = "src/templates"
+#json_dir  = "src/json_files"
 
 # Define app
 app = Flask(__name__) # app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), templ_dir))
 
 # Load models
-fraud_model_path = os.path.join(main_dir,proj_dir,model_dir,"fraud_cc_xgb_default_42.sav")
-type_model_path  = os.path.join(main_dir,proj_dir,model_dir,"fraud_type_xgb_default_42.sav")
+fraud_model_path = "fraud_cc_xgb_default_42.sav"
+type_model_path  = "fraud_type_xgb_default_42.sav"
 
 with open(fraud_model_path, "rb") as f:
     model_fraud = load(f)
@@ -26,13 +26,13 @@ with open(type_model_path, "rb") as t:
     model_type = load(t)
 
 # Load large input dictionaries    
-city_dict_path        = os.path.join(main_dir,proj_dir,json_dir,"json_city_mapping.json")
-state_dict_path       = os.path.join(main_dir,proj_dir,json_dir,"json_state_mapping.json")
-city_state_dict_path  = os.path.join(main_dir,proj_dir,json_dir,"json_city_state_mapping.json")
-city_pop_dict_path    = os.path.join(main_dir,proj_dir,json_dir,"json_city_pop_mapping.json") 
-city_lat_dict_path    = os.path.join(main_dir,proj_dir,json_dir,"json_city_lat_mapping.json") 
-city_long_dict_path   = os.path.join(main_dir,proj_dir,json_dir,"json_city_long_mapping.json")
-merchant_dict_path    = os.path.join(main_dir,proj_dir,json_dir,"json_merchant_mapping.json") 
+city_dict_path        = "json_city_mapping.json"
+state_dict_path       = "json_state_mapping.json"
+city_state_dict_path  = "json_city_state_mapping.json"
+city_pop_dict_path    = "json_city_pop_mapping.json"
+city_lat_dict_path    = "json_city_lat_mapping.json"
+city_long_dict_path   = "json_city_long_mapping.json"
+merchant_dict_path    = "json_merchant_mapping.json"
 
 with open(city_state_dict_path, "r") as cs:
     city_state_mapping_dict = json.load(cs)
