@@ -6,7 +6,7 @@ import json
 import os
 
 # Get project directory
-main_dir  = "/workspaces"
+main_dir  = "/workspaces/"
 proj_dir  = "final-project-cc-fraud-mec"
 model_dir = "models"
 templ_dir = "src/templates"
